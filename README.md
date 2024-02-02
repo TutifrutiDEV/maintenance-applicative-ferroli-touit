@@ -29,5 +29,6 @@ Mise en place du projet :
 - Lancer le docker compose
 - Aller dans le container python
   - docker exec -it cours-api-1 sh
+  - docker exec -it parcattraction-api-1 sh
   - Lancer les scripts python dans l'ordre : init.py puis create.py
 - Le projet est lancé
