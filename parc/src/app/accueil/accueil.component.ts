@@ -7,11 +7,12 @@ import { MatCardModule } from '@angular/material/card';
 import {MatDialog} from "@angular/material/dialog";
 import {AjoutCritiqueComponent} from "../ajout-critique/ajout-critique.component";
 import {MatButton} from "@angular/material/button";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-accueil',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButton],
+  imports: [CommonModule, MatCardModule, MatButton, RouterLink],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.scss'
 })

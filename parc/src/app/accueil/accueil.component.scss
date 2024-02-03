@@ -1,28 +1,23 @@
-.attraction-title {
-  font-size: 18px;
-  font-weight: 500;
-  background-color: darkgrey;
-  width: fit-content;
-  margin-top: 25px;
+.attraction-card {
+  max-width: max(1200px); /* Ajustez la largeur maximale selon vos besoins */
+  margin: 40px auto;
 }
-.attraction {
+
+.attraction-table {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  column-gap: 25px;
-  width: fit-content;
-
-  border-bottom: solid 1px grey;
-  span {
-    padding: 5px;
-    width: 250px;
-  }
 }
 
-mat-form-field {
-  display: block;
-  margin-bottom: 15px; /* Ajustez la marge selon vos préférences */
+.attraction-header,
+.attraction-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px;
+  border-bottom: 1px solid #ccc; /* Ajoute une bordure entre les lignes */
 }
 
-.button-group {
-  margin-top: 20px; /* Espace entre les champs et les boutons */
+.attraction-header {
+  font-weight: bold;
 }

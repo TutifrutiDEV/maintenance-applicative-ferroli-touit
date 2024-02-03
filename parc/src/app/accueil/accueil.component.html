@@ -1,24 +1,27 @@
-<mat-card>
+<mat-card class="attraction-card">
   <mat-card-header>
     <mat-card-title>Bienvenue sur le site internet du parc d'attraction</mat-card-title>
   </mat-card-header>
   <mat-card-content>
-    <div class="attraction-title">
-      <div class="attraction">
+    <div class="attraction-table">
+      <div class="attraction-header">
         <span>Nom de l'attraction</span>
         <span>Description de l'attraction</span>
         <span>Difficulté de l'attraction / 5</span>
+        <span>Ajouter une critique</span>
       </div>
+      <ng-container *ngFor="let attraction of attractions | async;">
+        <div class="attraction-row" *ngIf="attraction.visible">
+           <span>
+            <a [routerLink]="['/critiques', attraction.attraction_id]">{{attraction.nom}}</a>
+          </span>
+          <span>{{attraction.description}}</span>
+          <span>{{attraction.difficulte}} / 5</span>
+          <button mat-raised-button color="primary" (click)="ouvrirModal(attraction.nom, attraction.attraction_id ?? 0)">
+            Ajouter une critique
+          </button>
+        </div>
+      </ng-container>
     </div>
-    <ng-container *ngFor="let attraction of attractions | async;">
-      <div class="attraction" *ngIf="attraction.visible">
-        <span>{{attraction.nom}}</span>
-        <span>{{attraction.description}}</span>
-        <span>{{attraction.difficulte}} / 5</span>
-        <button mat-raised-button color="primary" (click)="ouvrirModal(attraction.nom, attraction.attraction_id ?? 0)">
-          Ajouter une critique
-        </button>
-      </div>
-    </ng-container>
   </mat-card-content>
 </mat-card>
