@@ -19,7 +19,7 @@ Notation :
 
 
 Quelques pistes sur quoi commencer :
-- Faire le bilan de l'existant
+- Faire le bilan de l'existant 
 - Établir un début de schéma BDD
 
 Mise en place du projet :

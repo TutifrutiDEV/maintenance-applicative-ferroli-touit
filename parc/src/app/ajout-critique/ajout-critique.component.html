@@ -1,0 +1,16 @@
+<form [formGroup]="critiqueForm">
+  <mat-form-field>
+  <input matInput formControlName="nom" placeholder="Votre nom">
+</mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="prenom" placeholder="Votre prenom">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="note" placeholder="Votre note">
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput formControlName="texte" placeholder="Votre critique"></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="enregistrerCritique()">Enregistrer</button>
+  <button mat-button (click)="fermerModal()">Annuler</button>
+</form>

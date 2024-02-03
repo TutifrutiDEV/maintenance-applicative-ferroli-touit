@@ -15,6 +15,9 @@
         <span>{{attraction.nom}}</span>
         <span>{{attraction.description}}</span>
         <span>{{attraction.difficulte}} / 5</span>
+        <button mat-raised-button color="primary" (click)="ouvrirModal(attraction.nom, attraction.attraction_id ?? 0)">
+          Ajouter une critique
+        </button>
       </div>
     </ng-container>
   </mat-card-content>

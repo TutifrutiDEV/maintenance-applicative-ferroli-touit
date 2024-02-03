@@ -24,7 +24,7 @@ export class AdminComponent {
 
   constructor(public attractionService: AttractionService, public formBuilder: FormBuilder, private _snackBar: MatSnackBar)
   {}
-  
+
   public attractions: Observable<AttractionInterface[]> = this.attractionService.getAllAttraction().pipe(tap((attractions:AttractionInterface[]) => {
     attractions.forEach(attraction => {
       this.formulaireAttractions.push(
@@ -51,7 +51,7 @@ export class AdminComponent {
 
   public addAttraction() {
     this.formulaireAttractions.push(
-      new FormGroup({
+        new FormGroup({
         attraction_id: new FormControl(),
         nom: new FormControl("", [Validators.required]),
         description: new FormControl("", [Validators.required]),
