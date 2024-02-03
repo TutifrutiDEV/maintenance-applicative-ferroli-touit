@@ -79,6 +79,15 @@ def deleteCritique(index):
         return "Element supprimé.", 200
     return jsonify({"message": "Erreur lors de la suppression."}), 500
 
+@app.route('/critique/paginated', methods=['GET'])
+def get_paginated_critiques_route():
+    # Retrieve pageSize and pageIndex from query parameters
+    page_size = int(request.args.get('pageSize', 10))
+    page_index = int(request.args.get('pageIndex', 1))
+
+    paginated_critiques = critiques.get_paginated_critiques(page_size, page_index)
+
+    return jsonify(paginated_critiques)
 
 
 @app.post('/login')

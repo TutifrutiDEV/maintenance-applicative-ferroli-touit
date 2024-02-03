@@ -21,4 +21,10 @@ export class CritiqueService {
     const data = this.dataService.postData(url, critique);
     return data as Observable<MessageInterface>;
   }
+
+  public getCritiquesWithPagination(pageSize: number, pageIndex: number): Observable<any> {
+    const url = `http://127.0.0.1:5000/critique/paginated?pageSize=${pageSize}&pageIndex=${pageIndex}`;
+    return this.dataService.getData(url);
+  }
+
 }
