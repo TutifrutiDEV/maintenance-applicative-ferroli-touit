@@ -1,3 +1,6 @@
+<!-- Centered Title -->
+<h1 class="centered-title">Liste des critiques</h1>
+
 <div *ngFor="let critique of critiques" class="critique-card">
   <h3>{{ critique.nom }} {{ critique.prenom || 'Anonyme' }}</h3>
   <p>Attraction : {{ critique.attraction_nom }}</p>
