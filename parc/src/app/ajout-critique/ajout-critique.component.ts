@@ -1,8 +1,8 @@
-import {Component, Inject, Input, NgModule, OnInit} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {MatFormField} from "@angular/material/form-field";
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpHeaders} from '@angular/common/http';
 import { CritiqueService } from '../Service/critique.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatInput} from "@angular/material/input";

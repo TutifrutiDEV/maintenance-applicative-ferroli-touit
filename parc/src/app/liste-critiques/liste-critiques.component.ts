@@ -1,8 +1,7 @@
-import {Component, NgModule, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { CritiqueService } from '../Service/critique.service';
 import { CritiqueInterface } from '../Interface/critiques.interface';
 import { CommonModule } from '@angular/common';
-import {PageEvent} from "@angular/material/paginator";
 import {MatButton} from "@angular/material/button";
 import { ActivatedRoute } from '@angular/router';
 
