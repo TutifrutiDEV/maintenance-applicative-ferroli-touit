@@ -27,4 +27,8 @@ export class CritiqueService {
     return this.dataService.getData(url);
   }
 
+  public getCritiquesWithPaginationByAttractionId(attractionId: number, pageSize: number, pageIndex: number): Observable<any> {
+    const url = `http://127.0.0.1:5000/critiquesAttractions/${attractionId}?pageSize=${pageSize}&pageIndex=${pageIndex}`;
+    return this.dataService.getData(url);
+  }
 }

@@ -82,13 +82,22 @@ def deleteCritique(index):
 @app.route('/critique/paginated', methods=['GET'])
 def get_paginated_critiques_route():
     # Retrieve pageSize and pageIndex from query parameters
-    page_size = int(request.args.get('pageSize', 10))
+    page_size = int(request.args.get('pageSize', 5))
     page_index = int(request.args.get('pageIndex', 1))
 
     paginated_critiques = critiques.get_paginated_critiques(page_size, page_index)
 
     return jsonify(paginated_critiques)
 
+@app.route('/critiquesAttractions/<int:attraction_id>', methods=['GET'])
+def get_critiques_for_attraction(attraction_id):
+    # Retrieve pageSize and pageIndex from query parameters
+    page_size = int(request.args.get('pageSize', 5))
+    page_index = int(request.args.get('pageIndex', 1))
+
+    critiques_for_attraction = critiques.get_critiques_for_attraction(page_size, page_index, attraction_id)
+
+    return jsonify(critiques_for_attraction)
 
 @app.post('/login')
 def login():

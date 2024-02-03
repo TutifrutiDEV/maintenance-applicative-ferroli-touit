@@ -4,6 +4,7 @@ import { CritiqueInterface } from '../Interface/critiques.interface';
 import { CommonModule } from '@angular/common';
 import {PageEvent} from "@angular/material/paginator";
 import {MatButton} from "@angular/material/button";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-liste-critiques',
@@ -20,30 +21,46 @@ export class ListeCritiquesComponent implements OnInit {
   totalCritiques: number = 0;
   pageSize: number = 5; // You can adjust this based on your preference
   pageIndex: number = 0;
+  attractionId: number | undefined;
 
-  constructor(private critiqueService: CritiqueService) {}
+  constructor(
+    private critiqueService: CritiqueService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.loadCritiques();
+    this.route.params.subscribe(params => {
+      this.attractionId = +params['id'];
+      this.loadCritiques();
+    });
   }
 
   loadCritiques() {
-    // Add pagination parameters to your API call
-    this.critiqueService.getCritiquesWithPagination(this.pageSize, this.pageIndex + 1).subscribe(
-      (response) => {
-        this.critiques = response.critiques;
-        this.totalCritiques = response.totalCritiques;
-      },
-      (error) => {
-        console.error('API Error:', error);
-      }
-    );
+    if (this.attractionId) {
+      this.critiqueService.getCritiquesWithPaginationByAttractionId(this.attractionId, this.pageSize, this.pageIndex + 1)
+        .subscribe(
+          (response) => {
+            this.critiques = response.critiques;
+            this.totalCritiques = response.totalCritiques;
+          },
+          (error) => {
+            console.error('API Error:', error);
+          }
+        );
+    } else {
+      this.critiqueService.getCritiquesWithPagination(this.pageSize, this.pageIndex + 1)
+        .subscribe(
+          (response) => {
+            this.critiques = response.critiques;
+            this.totalCritiques = response.totalCritiques;
+          },
+          (error) => {
+            console.error('API Error:', error);
+          }
+        );
+    }
   }
 
-  pageChanged(event: PageEvent) {
-    this.pageIndex = event.pageIndex;
-    this.loadCritiques();
-  }
 
   // In your component
   getPages(): number[] {
@@ -52,6 +69,14 @@ export class ListeCritiquesComponent implements OnInit {
   }
   goToPage(pageIndex: number) {
     // Logic to fetch paginated critiques for the specified page index
+    if (this.attractionId) {
+      this.critiqueService.getCritiquesWithPaginationByAttractionId(this.attractionId, this.pageSize, pageIndex)
+        .subscribe(response => {
+          this.critiques = response.critiques;
+          this.totalCritiques = response.totalCritiques;
+        });
+      return;
+    }
     this.critiqueService.getCritiquesWithPagination(this.pageSize, pageIndex)
       .subscribe(response => {
         this.critiques = response.critiques;

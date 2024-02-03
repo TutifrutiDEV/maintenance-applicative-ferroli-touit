@@ -37,5 +37,9 @@ export const routes: Routes = [
       path: 'critiques',
       component: ListeCritiquesComponent,
     },
+    {
+      path: 'critiques/:id',
+      component: ListeCritiquesComponent,
+    },
     { path: '',   redirectTo: '/accueil', pathMatch: 'full' },
 ];

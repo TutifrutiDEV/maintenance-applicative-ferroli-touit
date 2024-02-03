@@ -55,6 +55,29 @@ def get_paginated_critiques(page_size=10, page_index=1):
         'totalCritiques': total_critiques,
     }
 
+def get_critiques_for_attraction(page_size=10, page_index=1, attraction_id=1):
+
+    # Calculate the offset based on page size and index
+    offset = (page_index - 1) * page_size
+
+    # Fetch paginated critiques with attraction names from the database
+    requete = f"""
+        SELECT c.*, a.nom as attraction_nom
+        FROM critiques c
+        JOIN attraction a ON c.attraction_id = a.attraction_id
+        WHERE c.attraction_id = ?  -- Filter critiques for the specified attraction_id
+        ORDER BY c.id DESC  -- Order by id in descending order
+        LIMIT {page_size} OFFSET {offset}
+    """
+
+    paginated_critiques = req.select_from_db(requete, (attraction_id,))
+    # Get the total number of critiques for the specified attraction (for pagination info)
+    total_critiques = len(req.select_from_db("SELECT * FROM critiques WHERE attraction_id = ?", (attraction_id,)))
+
+    return {
+        'critiques': paginated_critiques,
+        'totalCritiques': total_critiques,
+    }
 
 def get_critiques(id):
     if not id:
