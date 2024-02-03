@@ -1,16 +1,31 @@
 <form [formGroup]="critiqueForm">
   <mat-form-field>
-  <input matInput formControlName="nom" placeholder="Votre nom">
-</mat-form-field>
-  <mat-form-field>
-    <input matInput formControlName="prenom" placeholder="Votre prenom">
+    <input matInput formControlName="nom" placeholder="Votre nom">
+    <mat-error *ngIf="critiqueForm.get('nom')?.hasError('required')">
+      Le nom est obligatoire.
+    </mat-error>
   </mat-form-field>
+
+  <mat-form-field>
+    <input matInput formControlName="prenom" placeholder="Votre prénom">
+  </mat-form-field>
+
   <mat-form-field>
     <input matInput formControlName="note" placeholder="Votre note">
+    <mat-error *ngIf="critiqueForm.get('note')?.hasError('pattern')">
+      La note doit être un chiffre entre 1 et 5.
+    </mat-error>
   </mat-form-field>
+
   <mat-form-field>
     <textarea matInput formControlName="texte" placeholder="Votre critique"></textarea>
+    <mat-error *ngIf="critiqueForm.get('texte')?.hasError('max')">
+      La critique ne doit pas dépasser 500 caractères.
+    </mat-error>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="enregistrerCritique()">Enregistrer</button>
-  <button mat-button (click)="fermerModal()">Annuler</button>
+
+  <div class="button-group">
+    <button mat-raised-button color="primary" (click)="enregistrerCritique()">Enregistrer</button>
+    <button mat-button (click)="fermerModal()">Annuler</button>
+  </div>
 </form>

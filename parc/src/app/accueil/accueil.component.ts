@@ -6,11 +6,12 @@ import { AttractionInterface } from '../Interface/attraction.interface';
 import { MatCardModule } from '@angular/material/card';
 import {MatDialog} from "@angular/material/dialog";
 import {AjoutCritiqueComponent} from "../ajout-critique/ajout-critique.component";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-accueil',
   standalone: true,
-  imports: [CommonModule, MatCardModule],
+  imports: [CommonModule, MatCardModule, MatButton],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.scss'
 })
