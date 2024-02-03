@@ -1,0 +1,16 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px; /* Ajoute une marge de 20px autour du formulaire */
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 15px; /* Ajoute une marge en bas de chaque champ de formulaire */
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px; /* Ajoute une marge en haut du groupe de boutons */
+}

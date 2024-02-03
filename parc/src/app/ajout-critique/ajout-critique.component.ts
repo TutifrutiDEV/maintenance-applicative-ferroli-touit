@@ -40,7 +40,7 @@ export class AjoutCritiqueComponent{
       attraction_id: [this.data.attraction_id],  // Utilisez data.attraction_id ici
       nom: ['', Validators.required],
       prenom: [''],
-      note: ['', Validators.pattern('^[1-5]$')],
+      note: ['', Validators.pattern('^[1-4](\.[0-9])?$|^5$')],
       texte: ['', Validators.max(500)],
     });
   }

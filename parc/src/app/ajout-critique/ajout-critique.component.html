@@ -1,23 +1,23 @@
-<form [formGroup]="critiqueForm">
-  <mat-form-field>
+<form [formGroup]="critiqueForm" class="form-container">
+  <mat-form-field class="form-field">
     <input matInput formControlName="nom" placeholder="Votre nom">
     <mat-error *ngIf="critiqueForm.get('nom')?.hasError('required')">
       Le nom est obligatoire.
     </mat-error>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="form-field">
     <input matInput formControlName="prenom" placeholder="Votre prénom">
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="form-field">
     <input matInput formControlName="note" placeholder="Votre note">
     <mat-error *ngIf="critiqueForm.get('note')?.hasError('pattern')">
-      La note doit être un chiffre entre 1 et 5.
+      La note doit être un chiffre entre 1 et 5 (ex:3.4).
     </mat-error>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="form-field">
     <textarea matInput formControlName="texte" placeholder="Votre critique"></textarea>
     <mat-error *ngIf="critiqueForm.get('texte')?.hasError('max')">
       La critique ne doit pas dépasser 500 caractères.
