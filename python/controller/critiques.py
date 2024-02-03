@@ -42,6 +42,7 @@ def get_paginated_critiques(page_size=10, page_index=1):
         SELECT c.*, a.nom as attraction_nom
         FROM critiques c
         JOIN attraction a ON c.attraction_id = a.attraction_id
+        ORDER BY c.id DESC
         LIMIT {page_size} OFFSET {offset}
     """
     paginated_critiques = req.select_from_db(requete)
