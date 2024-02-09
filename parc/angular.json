@@ -5,6 +5,14 @@
   "projects": {
     "parc": {
       "projectType": "application",
+      "i18n": {
+        "sourceLocale": "fr",
+        "locales": {
+          "en": {
+            "translation": "src/locale/messages.en.xlf"
+          }
+        }
+      },
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
@@ -17,6 +25,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": true,
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/parc",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -36,6 +46,11 @@
             "scripts": []
           },
           "configurations": {
+            "en": {
+              "localize": [
+                "en"
+              ]
+            },
             "production": {
               "budgets": [
                 {
@@ -62,6 +77,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "en": {
+              "browserTarget": "parc:build:en"
+            },
             "production": {
               "buildTarget": "parc:build:production"
             },
@@ -74,6 +92,8 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+            "format": "xlf",
+            "outputPath": "src/locale",
             "buildTarget": "parc:build"
           }
         },

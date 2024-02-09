@@ -1,10 +1,10 @@
 <!-- Centered Title -->
-<h1 class="centered-title">Liste des critiques</h1>
+<h1 class="centered-title" i18n>Liste des critiques</h1>
 
 <div *ngFor="let critique of critiques" class="critique-card">
   <h3>{{ critique.nom }} {{ critique.prenom || 'Anonyme' }}</h3>
   <p>Attraction : {{ critique.attraction_nom }}</p>
-  <p>Note : {{ critique.note }}/5</p>
+  <p i18n>Note : {{ critique.note }}/5</p>
   <p>{{ critique.texte }}</p>
 </div>
 <!-- Pagination buttons -->

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="fr" datatype="plaintext" original="ng2.template" target-language="en">
+    <body>
+      <trans-unit id="9112633654982659978" datatype="html">
+        <source>Bienvenue sur le site internet du parc d&apos;attraction</source>
+        <target>Welcome to the amusement park website</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/accueil/accueil.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="333414571658679353" datatype="html">
+        <source><x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div class=&quot;attraction-header&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Nom de l&apos;attraction<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Description de l&apos;attraction<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Difficulté de l&apos;attraction / 5<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Ajouter une critique<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/><x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container *ngFor=&quot;let attraction of attractions | async;&quot;&gt;"/><x id="START_TAG_DIV_1" ctype="x-div_1" equiv-text="&lt;div class=&quot;attraction-row&quot; *ngIf=&quot;attraction.visible&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/critiques&apos;, attraction.attraction_id]&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{attraction.nom}}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_1" equiv-text="{{attraction.description}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_2" equiv-text="{{attraction.difficulte}}"/> / 5<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button mat-raised-button color=&quot;primary&quot; (click)=&quot;ouvrirModal(attraction.nom, attraction.attraction_id ?? 0)&quot;&gt;"/> Ajouter une critique <x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/><x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;/ng-container&gt;"/></source>
+        <target><x id="START_TAG_DIV" ctype="x-div" equiv-text="&lt;div class=&quot;attraction-header&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Attraction Name<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Attraction Description<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Attraction Difficulty / 5<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/>Add a review<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/><x id="START_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;ng-container *ngFor=&quot;let attraction of attractions | async;&quot;&gt;"/><x id="START_TAG_DIV_1" ctype="x-div_1" equiv-text="&lt;div class=&quot;attraction-row&quot; *ngIf=&quot;attraction.visible&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="START_LINK" ctype="x-a" equiv-text="&lt;a [routerLink]=&quot;[&apos;/critiques&apos;, attraction.attraction_id]&quot;&gt;"/><x id="INTERPOLATION" equiv-text="{{attraction.nom}}"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_1" equiv-text="{{attraction.description}}"/><x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span&gt;"/><x id="INTERPOLATION_2" equiv-text="{{attraction.difficulte}}"/> / 5<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button mat-raised-button color=&quot;primary&quot; (click)=&quot;ouvrirModal(attraction.nom, attraction.attraction_id ?? 0)&quot;&gt;"/> Ajouter une critique <x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/><x id="CLOSE_TAG_DIV" ctype="x-div" equiv-text="&lt;/div&gt;"/><x id="CLOSE_TAG_NG_CONTAINER" ctype="x-ng_container" equiv-text="&lt;/ng-container&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/accueil/accueil.component.html</context>
+          <context context-type="linenumber">7,26</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="2891318612780409162" datatype="html">
+        <source> Le nom est obligatoire. </source>
+        <target> The name is required. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ajout-critique/ajout-critique.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="4455973163893352692" datatype="html">
+        <source> La note doit être un chiffre entre 1 et 5 (ex:3.4). </source>
+        <target> The note must be a number between 1 and 5 (ex:3.4). </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ajout-critique/ajout-critique.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="5734559744861065401" datatype="html">
+        <source> La critique ne doit pas dépasser 500 caractères. </source>
+        <target> The review must not exceed 500 characters. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ajout-critique/ajout-critique.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="4977912145007192180" datatype="html">
+        <source>Enregistrer</source>
+        <target>Save</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ajout-critique/ajout-critique.component.html</context>
+          <context context-type="linenumber">28,29</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="1711750570766225138" datatype="html">
+        <source>Annuler</source>
+        <target>Cancel</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/ajout-critique/ajout-critique.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="5207154043723142879" datatype="html">
+        <source>Liste des critiques</source>
+        <target>Review list</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/liste-critiques/liste-critiques.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+
+      <trans-unit id="7551002979022540900" datatype="html">
+        <source>Note : <x id="INTERPOLATION" equiv-text="{{ critique.note }}"/>/5</source>
+        <target>Rating: <x id="INTERPOLATION" equiv-text="{{ critique.note }}"/>/5</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/liste-critiques/liste-critiques.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+
+    </body>
+  </file>
+</xliff>
