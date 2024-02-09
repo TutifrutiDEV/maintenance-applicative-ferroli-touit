@@ -29,6 +29,15 @@
         </context-group>
       </trans-unit>
 
+      <trans-unit id="5041354590769758251" datatype="html">
+        <source>Admin</source>
+        <target>Admin</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+
       <trans-unit id="4455973163893352692" datatype="html">
         <source> La note doit être un chiffre entre 1 et 5 (ex:3.4). </source>
         <target> The note must be a number between 1 and 5 (ex:3.4). </target>
