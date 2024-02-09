@@ -1,6 +1,11 @@
 import request.request as req
 
 def add_critiques(data):
+    """
+    Crée une critique dans la base de données.
+    :param data: dictionnaire contenant les informations de la critique.
+    :return: l'id de la critique créée.
+    """
     if (
         not "attraction_id" in data
         or not "nom" in data
@@ -29,11 +34,21 @@ def add_critiques(data):
     return id
 
 def get_all_critiques():
+    """
+    Récupère toutes les critiques de la base de données.
+    :return: une liste de critiques.
+    """
     json = req.select_from_db("SELECT * FROM critiques")
 
     return json
 
 def get_paginated_critiques(page_size=10, page_index=1):
+    """
+    Récupère les critiques paginées de la base de données.
+    :param page_size: nombre de critiques par page.
+    :param page_index: index de la page.
+    :return: un dictionnaire contenant les critiques paginées et le nombre total de critiques.
+    """
     # Calculate the offset based on page size and index
     offset = (page_index - 1) * page_size
 
@@ -56,6 +71,13 @@ def get_paginated_critiques(page_size=10, page_index=1):
     }
 
 def get_critiques_for_attraction(page_size=10, page_index=1, attraction_id=1):
+    """
+    Récupère les critiques paginées pour une attraction spécifique de la base de données.
+    :param page_size: nombre de critiques par page.
+    :param page_index: index de la page.
+    :param attraction_id: id de l'attraction.
+    :return: un dictionnaire contenant les critiques paginées et le nombre total de critiques pour l'attraction spécifiée.
+    """
 
     # Calculate the offset based on page size and index
     offset = (page_index - 1) * page_size
@@ -80,6 +102,11 @@ def get_critiques_for_attraction(page_size=10, page_index=1, attraction_id=1):
     }
 
 def get_critiques(id):
+    """
+    Récupère une critique de la base de données.
+    :param id: id de la critique.
+    :return: une critique.
+    """
     if not id:
         return False
 
@@ -94,6 +121,11 @@ def get_critiques(id):
         return []
 
 def delete_critiques(id):
+    """
+    Supprime une critique de la base de données.
+    :param id: id de la critique.
+    :return: un booléen indiquant si la suppression a été effectuée.
+    """
     if not id:
         return False
 
@@ -102,6 +134,11 @@ def delete_critiques(id):
     return True
 
 def update_critiques(data):
+    """
+    Met à jour une critique dans la base de données.
+    :param data: dictionnaire contenant les informations de la critique.
+    :return: un booléen indiquant si la mise à jour a été effectuée.
+    """
     if (
         not "id" in data
         or not "attraction_id" in data
