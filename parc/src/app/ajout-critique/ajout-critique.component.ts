@@ -46,7 +46,13 @@ export class AjoutCritiqueComponent{
   }
 
 
-
+  /**
+   * Enregistrez la critique dans la base de données
+   * @returns void
+   * @memberof AjoutCritiqueComponent
+   * @description Cette méthode envoie une requête POST à votre API pour enregistrer la critique dans la base de données.
+   * Elle utilise le service critiqueService pour envoyer la requête POST.
+   */
   enregistrerCritique() {
     this.critiqueForm.markAllAsTouched();
 
@@ -79,6 +85,12 @@ export class AjoutCritiqueComponent{
   }
 
 
+  /**
+   * Fermez la boîte de dialogue
+   * @returns void
+   * @memberof AjoutCritiqueComponent
+   * @description Cette méthode ferme la boîte de dialogue en cours.
+   */
   fermerModal() {
     this.dialogRef.close();
   }

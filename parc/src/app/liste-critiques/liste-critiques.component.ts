@@ -27,6 +27,12 @@ export class ListeCritiquesComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  /**
+   * Charge les critiques de la base de données
+   * @returns void
+   * @memberof ListeCritiquesComponent
+   * @description Cette méthode charge les critiques de la base de données en utilisant le service critiqueService.
+   */
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.attractionId = +params['id'];
@@ -34,6 +40,16 @@ export class ListeCritiquesComponent implements OnInit {
     });
   }
 
+  /**
+   * Charge les critiques de la base de données
+   * @returns void
+   * @memberof ListeCritiquesComponent
+   * @description Cette méthode charge les critiques de la base de données en utilisant le service critiqueService.
+   * Elle utilise la méthode critiqueService.getCritiquesWithPagination pour charger les critiques de la base de données.
+   * Si l'identifiant de l'attraction est défini, elle utilise la méthode critiqueService.getCritiquesWithPaginationByAttractionId pour charger les critiques de l'attraction spécifiée.
+   * Elle utilise la propriété pageSize pour spécifier le nombre de critiques à charger par page.
+   * Elle utilise la propriété pageIndex pour spécifier le numéro de la page à charger.
+   */
   loadCritiques() {
     if (this.attractionId) {
       this.critiqueService.getCritiquesWithPaginationByAttractionId(this.attractionId, this.pageSize, this.pageIndex + 1)
@@ -61,11 +77,22 @@ export class ListeCritiquesComponent implements OnInit {
   }
 
 
-  // In your component
+  /**
+   * Récupère les numéros de page pour la pagination
+   */
   getPages(): number[] {
     const totalPages = Math.ceil(this.totalCritiques / this.pageSize);
     return Array.from({ length: totalPages }, (_, index) => index + 1);
   }
+
+  /**
+   * Permet de naviguer vers une page spécifique
+   * @param pageIndex
+   * @returns void
+   * @memberof ListeCritiquesComponent
+   * @description Cette méthode permet de naviguer vers une page spécifique en utilisant la méthode critiqueService.getCritiquesWithPaginationByAttractionId pour charger les critiques de l'attraction spécifiée.
+   * Elle utilise la méthode critiqueService.getCritiquesWithPagination pour charger les critiques de la base de données.
+   */
   goToPage(pageIndex: number) {
     // Logic to fetch paginated critiques for the specified page index
     if (this.attractionId) {
