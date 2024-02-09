@@ -1,7 +1,7 @@
 <mat-toolbar>
-  <span><a routerLink="/accueil">Parc d'attraction</a></span>
+  <span><a routerLink="/accueil" i18n>Parc d'attraction</a></span>
   <div *ngIf="authService.isLoggedIn">
-    <button mat-stroked-button (click)="logout()">Déconnexion</button>
+    <button mat-stroked-button (click)="logout()" i18n>Déconnexion</button>
   </div>
 </mat-toolbar>
 
