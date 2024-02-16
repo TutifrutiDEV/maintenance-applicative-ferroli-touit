@@ -129,32 +129,39 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="154984213326282857" datatype="html">
+        <source>Critiques</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="5041354590769758251" datatype="html">
         <source>Admin</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">4,5</context>
+          <context context-type="linenumber">6,7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6446192435648820310" datatype="html">
         <source>Déconnexion</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">5,6</context>
+          <context context-type="linenumber">7,8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5207154043723142879" datatype="html">
         <source>Liste des critiques</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/liste-critiques/liste-critiques.component.html</context>
-          <context context-type="linenumber">2,4</context>
+          <context context-type="linenumber">2,5</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7551002979022540900" datatype="html">
         <source>Note : <x id="INTERPOLATION" equiv-text="{{ critique.note }}"/>/5</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/liste-critiques/liste-critiques.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">9,10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8538638472238576115" datatype="html">

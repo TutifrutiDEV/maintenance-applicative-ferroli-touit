@@ -28,4 +28,8 @@ export class AppComponent {
     this.router.navigate(["/admin"]);
   }
 
+  goToCritiques() {
+    this.router.navigate(["/critiques"]);
+  }
+
 }

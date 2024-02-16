@@ -8,11 +8,12 @@ import {MatDialog} from "@angular/material/dialog";
 import {AjoutCritiqueComponent} from "../ajout-critique/ajout-critique.component";
 import {MatButton} from "@angular/material/button";
 import {RouterLink} from "@angular/router";
+import {MatLabel} from "@angular/material/form-field";
 
 @Component({
   selector: 'app-accueil',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatButton, RouterLink],
+    imports: [CommonModule, MatCardModule, MatButton, RouterLink, MatLabel],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.scss'
 })

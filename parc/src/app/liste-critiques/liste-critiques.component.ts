@@ -3,14 +3,15 @@ import { CritiqueService } from '../Service/critique.service';
 import { CritiqueInterface } from '../Interface/critiques.interface';
 import { CommonModule } from '@angular/common';
 import {MatButton} from "@angular/material/button";
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-liste-critiques',
   standalone: true,
   imports: [
     CommonModule,
-    MatButton
+    MatButton,
+    RouterLink
   ],
   templateUrl: './liste-critiques.component.html',
   styleUrl: './liste-critiques.component.scss'
