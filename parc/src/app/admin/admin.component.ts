@@ -40,7 +40,6 @@ export class AdminComponent {
   }));
 
   public onSubmit(attractionFormulaire: FormGroup) {
-    console.log(attractionFormulaire)
     this.attractionService.postAttraction(attractionFormulaire.getRawValue()).subscribe(result => {
       attractionFormulaire.patchValue({attraction_id: result.result});
       this._snackBar.open(result.message, undefined, {
