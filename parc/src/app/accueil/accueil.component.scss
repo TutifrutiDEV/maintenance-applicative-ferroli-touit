@@ -1,5 +1,5 @@
 .attraction-card {
-  max-width: max(1200px); /* Ajustez la largeur maximale selon vos besoins */
+  max-width: max(1200px);
   margin: 40px auto;
 }
 
@@ -15,13 +15,13 @@
   justify-content: space-between;
   width: 100%;
   padding: 8px;
-  border-bottom: 1px solid #ccc; /* Ajoute une bordure entre les lignes */
+  border-bottom: 1px solid #ccc;
 }
 .attraction-row span {
-  display: inline-block; /* ou flex, selon votre mise en page */
+  display: inline-block;
   vertical-align: middle;
-  min-width: 120px; /* Ajustez selon le besoin */
-  /* autres styles nécessaires pour l'alignement et l'espacement */
+  min-width: 120px;
+
 }
 
 
