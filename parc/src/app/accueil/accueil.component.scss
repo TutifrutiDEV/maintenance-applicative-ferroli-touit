@@ -17,7 +17,16 @@
   padding: 8px;
   border-bottom: 1px solid #ccc; /* Ajoute une bordure entre les lignes */
 }
+.attraction-row span {
+  display: inline-block; /* ou flex, selon votre mise en page */
+  vertical-align: middle;
+  min-width: 120px; /* Ajustez selon le besoin */
+  /* autres styles nécessaires pour l'alignement et l'espacement */
+}
+
 
 .attraction-header {
   font-weight: bold;
 }
+
+

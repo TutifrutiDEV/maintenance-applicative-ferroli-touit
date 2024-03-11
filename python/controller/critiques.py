@@ -120,6 +120,34 @@ def get_critiques(id):
     else:
         return []
 
+def get_moyenne_note(attraction_id):
+    """
+    Récupère la moyenne des notes d'une attraction.
+    :param attraction_id: id de l'attraction.
+    :return: la moyenne des notes.
+    """
+    if not attraction_id:
+        return False
+
+    # Requête SQL pour obtenir la moyenne des notes
+    sql = """
+    SELECT AVG(note) AS moyenne
+    FROM critiques
+    WHERE attraction_id = ?
+    """
+
+    # Exécution de la requête
+    json = req.select_from_db(sql, (attraction_id,))
+
+    # Si l'attraction n'a pas de critique, on retourne None
+    if len(json) == 0:
+        return None
+
+    # On extrait la moyenne du résultat
+    moyenne = json[0]["moyenne"]
+
+    return moyenne
+
 def delete_critiques(id):
     """
     Supprime une critique de la base de données.

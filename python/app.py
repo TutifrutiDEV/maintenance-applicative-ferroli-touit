@@ -52,6 +52,12 @@ def deleteAttraction(index):
         return "Element supprimé.", 200
     return jsonify({"message": "Erreur lors de la suppression."}), 500
 
+@app.get('/moyenneNote/<int:attraction_id>')
+def get_moyenne_note(attraction_id):
+    moyenne = critiques.get_moyenne_note(attraction_id)
+    return jsonify(moyenne)
+
+
 # Critique
 @app.post('/critiques')
 def addCritique():

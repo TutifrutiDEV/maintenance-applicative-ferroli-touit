@@ -2,12 +2,15 @@
   <mat-card-header>
     <mat-card-title i18n>Bienvenue sur le site internet du parc d'attraction</mat-card-title>
   </mat-card-header>
+  <mat-spinner *ngIf="loading" diameter="50"></mat-spinner>
+
   <mat-card-content>
     <div class="attraction-table" i18n>
       <div class="attraction-header">
         <span>Nom de l'attraction</span>
         <span>Description de l'attraction</span>
         <span>Difficulté de l'attraction / 5</span>
+        <span>Moyenne des avis</span>
         <span>Ajouter une critique</span>
       </div>
       <ng-container *ngFor="let attraction of attractions | async;">
@@ -17,6 +20,7 @@
           </span>
           <span>{{attraction.description}}</span>
           <span>{{attraction.difficulte}} / 5</span>
+          <span>{{attraction.moyenne !== null ? (attraction.moyenne | number:'1.1-1') : "Pas de critique"}}</span>
           <button mat-raised-button color="primary" (click)="ouvrirModal(attraction.nom, attraction.attraction_id ?? 0)">
            Ajouter une critique
           </button>
