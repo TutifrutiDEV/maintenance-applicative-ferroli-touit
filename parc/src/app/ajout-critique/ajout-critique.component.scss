@@ -1,16 +1,26 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  margin: 20px; /* Ajoute une marge de 20px autour du formulaire */
+  margin: 20px;
 }
 
 .form-field {
   width: 100%;
-  margin-bottom: 15px; /* Ajoute une marge en bas de chaque champ de formulaire */
+  margin-bottom: 15px;
 }
 
 .button-group {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px; /* Ajoute une marge en haut du groupe de boutons */
+  margin-top: 15px;
+}
+
+.rating mat-icon {
+  color: gray;
+  transition: color 0.2s;
+}
+
+.rating mat-icon.rated,
+.rating mat-icon.hovered {
+  color: orange;
 }

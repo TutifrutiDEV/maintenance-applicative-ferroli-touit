@@ -9,6 +9,7 @@ import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import { MatInputModule } from '@angular/material/input';
 import { CommonModule } from '@angular/common';
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-ajout-critique',
@@ -21,12 +22,16 @@ import { CommonModule } from '@angular/common';
     MatInput,
     MatButton,
     MatInputModule,
-    CommonModule
+    CommonModule,
+    MatIcon
   ],
   styleUrls: ['./ajout-critique.component.scss']
 })
 export class AjoutCritiqueComponent{
   critiqueForm: FormGroup;
+  stars: number[] = [1, 2, 3, 4, 5];
+  rating: number = 0;
+  temporaryRating: number = 0;
 
   constructor(
     public dialogRef: MatDialogRef<AjoutCritiqueComponent>,
@@ -45,6 +50,30 @@ export class AjoutCritiqueComponent{
     });
   }
 
+  /**
+   * Définissez la note de la critique
+   * @param rating - La note de la critique
+   */
+  setRating(rating: number): void {
+    this.rating = rating;
+    this.temporaryRating = rating; // Met à jour la note temporaire pour maintenir l'affichage
+    this.critiqueForm.get('note')?.setValue(this.rating);
+  }
+
+/**
+   * Réinitialisez la note temporaire
+   */
+  setTemporaryRating(rating: number): void {
+    this.temporaryRating = rating;
+  }
+
+  /**
+   * Effacez la note temporaire
+   */
+  clearTemporaryRating(): void {
+    this.temporaryRating = this.rating; // Réinitialise la note temporaire à la sélection permanente
+  }
+
 
   /**
    * Enregistrez la critique dans la base de données
@@ -61,7 +90,6 @@ export class AjoutCritiqueComponent{
       let critiqueData = this.critiqueForm.value;
       critiqueData.prenom = critiqueData.prenom || 'Anonyme';
 
-      // Construisez l'en-tête pour spécifier que le contenu est au format JSON
       const httpOptions = {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',

@@ -10,11 +10,18 @@
     <input matInput formControlName="prenom" placeholder="Votre prénom">
   </mat-form-field>
 
+  <div class="rating" (mouseleave)="clearTemporaryRating()">
+    <ng-container *ngFor="let star of stars; let i = index">
+      <mat-icon
+        [ngClass]="{'rated': rating >= i + 1, 'hovered': temporaryRating >= i + 1}"
+        (click)="setRating(i + 1)"
+        (mouseenter)="setTemporaryRating(i + 1)"
+      >star</mat-icon>
+    </ng-container>
+  </div>
+
   <mat-form-field class="form-field">
-    <input matInput formControlName="note" placeholder="Votre note">
-    <mat-error *ngIf="critiqueForm.get('note')?.hasError('pattern')" i18n>
-      La note doit être un chiffre entre 1 et 5 (ex:3.4).
-    </mat-error>
+    <input matInput [value]="rating" placeholder="Votre note" readonly>
   </mat-form-field>
 
   <mat-form-field class="form-field">
