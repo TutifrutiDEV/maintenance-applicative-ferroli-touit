@@ -11,7 +11,6 @@ try:
         database="maintenanceapplicative"
     )
     cur = conn.cursor()
-    #code ici
 
     with open('sql_file/init.sql') as f:
         fichier = f.read()

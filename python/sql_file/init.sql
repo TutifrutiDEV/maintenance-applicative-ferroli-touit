@@ -1,4 +1,7 @@
+DROP TABLE IF EXISTS critiques;
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS attraction;
+
 
 CREATE TABLE attraction (
     attraction_id int auto_increment,
@@ -9,7 +12,6 @@ CREATE TABLE attraction (
     visible bool default true
 );
 
-DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     users_id int auto_increment,
@@ -18,14 +20,13 @@ CREATE TABLE users (
     password varchar(255) not null
 );
 
-CREATE TABLE `critiques` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `attraction_id` int NOT NULL,
-  `nom` varchar(255) DEFAULT NULL,
-  `prenom` varchar(255) DEFAULT NULL,
-  `texte` text NOT NULL,
-  `note` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `attraction_id` (`attraction_id`),
-  CONSTRAINT `critiques_ibfk_1` FOREIGN KEY (`attraction_id`) REFERENCES `attraction` (`attraction_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE critiques (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    attraction_id INT NOT NULL,
+    nom VARCHAR(255),
+    prenom VARCHAR(255),
+    texte TEXT NOT NULL,
+    note VARCHAR(255) NOT NULL,
+    FOREIGN KEY (attraction_id) REFERENCES attraction(attraction_id)
+);
