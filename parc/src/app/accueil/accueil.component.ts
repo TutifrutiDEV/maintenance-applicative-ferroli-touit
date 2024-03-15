@@ -19,7 +19,7 @@ import {MatProgressSpinner} from "@angular/material/progress-spinner";
   styleUrl: './accueil.component.scss'
 })
 export class AccueilComponent {
-  public loading: boolean = true; // Ajoutez cette ligne
+  public loading: boolean = true;
 
   constructor(
     public attractionService: AttractionService,
@@ -34,7 +34,7 @@ export class AccueilComponent {
   loadAttractions() {
     this.attractionService.getAllAttractionWithMoyenne().subscribe({
       next: (attractions) => {
-        this.attractions = of(attractions); // Assurez-vous que 'attractions' est un Observable
+        this.attractions = of(attractions);
         this.loading = false; // Masquez le spinner une fois les données chargées
       },
       error: () => {
@@ -49,7 +49,6 @@ export class AccueilComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      // Vous pouvez traiter le résultat ici si nécessaire
     });
   }
 }

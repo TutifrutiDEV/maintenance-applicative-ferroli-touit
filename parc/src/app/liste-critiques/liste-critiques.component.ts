@@ -19,7 +19,7 @@ import {ActivatedRoute, RouterLink} from '@angular/router';
 export class ListeCritiquesComponent implements OnInit {
   critiques: CritiqueInterface[] = [];
   totalCritiques: number = 0;
-  pageSize: number = 5; // You can adjust this based on your preference
+  pageSize: number = 5;
   pageIndex: number = 0;
   attractionId: number | undefined;
 
@@ -95,7 +95,6 @@ export class ListeCritiquesComponent implements OnInit {
    * Elle utilise la méthode critiqueService.getCritiquesWithPagination pour charger les critiques de la base de données.
    */
   goToPage(pageIndex: number) {
-    // Logic to fetch paginated critiques for the specified page index
     if (this.attractionId) {
       this.critiqueService.getCritiquesWithPaginationByAttractionId(this.attractionId, this.pageSize, pageIndex)
         .subscribe(response => {

@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  
+
   http = inject(HttpClient);
-  
+
   isLoggedIn = false;
   user: UserInterface|null = null;
 
@@ -23,7 +23,7 @@ export class AuthService {
         ...form,
       }
     ).pipe(map(user => {
-      this.isLoggedIn = user.token ? true : false;
+      this.isLoggedIn = !!user.token;
       this.user = user ? user : null;
       localStorage.setItem("user", JSON.stringify(user));
       return this.isLoggedIn;
@@ -39,7 +39,7 @@ export class AuthService {
   setUser() {
     const user = localStorage.getItem("user");
     if (user !== "" && user !== null) {
-      this.isLoggedIn = (JSON.parse(user) as UserInterface).token ? true : false;
+      this.isLoggedIn = !!(JSON.parse(user) as UserInterface).token;
       this.user = JSON.parse(user) as UserInterface;
     } else {
       this.isLoggedIn = false;

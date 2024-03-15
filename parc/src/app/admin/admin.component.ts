@@ -25,6 +25,9 @@ export class AdminComponent {
   constructor(public attractionService: AttractionService, public formBuilder: FormBuilder, private _snackBar: MatSnackBar)
   {}
 
+  /**
+   * Charge les attractions de la base de données
+   */
   public attractions: Observable<AttractionInterface[]> = this.attractionService.getAllAttraction().pipe(tap((attractions:AttractionInterface[]) => {
     attractions.forEach(attraction => {
       this.formulaireAttractions.push(
@@ -39,6 +42,10 @@ export class AdminComponent {
     });
   }));
 
+  /**
+   * Soumet le formulaire pour une attraction
+   * @param attractionFormulaire
+   */
   public onSubmit(attractionFormulaire: FormGroup) {
     this.attractionService.postAttraction(attractionFormulaire.getRawValue()).subscribe(result => {
       attractionFormulaire.patchValue({attraction_id: result.result});
@@ -48,6 +55,9 @@ export class AdminComponent {
     });
   }
 
+  /**
+   * Ajoute un formulaire pour une attraction
+   */
   public addAttraction() {
     this.formulaireAttractions.push(
         new FormGroup({

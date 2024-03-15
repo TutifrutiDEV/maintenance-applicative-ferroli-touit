@@ -56,7 +56,7 @@ export class AjoutCritiqueComponent{
    */
   setRating(rating: number): void {
     this.rating = rating;
-    this.temporaryRating = rating; // Met à jour la note temporaire pour maintenir l'affichage
+    this.temporaryRating = rating;
     this.critiqueForm.get('note')?.setValue(this.rating);
   }
 
@@ -71,7 +71,7 @@ export class AjoutCritiqueComponent{
    * Effacez la note temporaire
    */
   clearTemporaryRating(): void {
-    this.temporaryRating = this.rating; // Réinitialise la note temporaire à la sélection permanente
+    this.temporaryRating = this.rating;
   }
 
 
@@ -102,12 +102,11 @@ export class AjoutCritiqueComponent{
         .subscribe(response => {
           console.log('API Response:', response);
           this._snackBar.open('Critique enregistrée avec succès', 'Fermer', {
-            duration: 3000,  // Durée en millisecondes pour afficher la notification
+            duration: 3000,
           });
           this.fermerModal();
         }, error => {
           console.error('API Error:', error);
-          // Traitez les erreurs éventuelles ici
         });
     }
   }
